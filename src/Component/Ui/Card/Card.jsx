@@ -52,8 +52,8 @@ const Card = props => {
         }
     }
 
+
     const resumeTimerToDestroy = useMemo(() => {
-        console.log(props.id , 'Run')
         return () => {
             action.reset()
             action.start(timeToDie)
@@ -67,13 +67,14 @@ const Card = props => {
         dateTimeAfterPause.current = currentDateTime - Date.now() + 1000
         action.pause()
     }
+
+
     useEffect(() => {
         if(props.isLast === undefined) {
             action.start()
             iniialTimerToDestroy()
         }
     }, [])
-
 
 
     useEffect(() => {
@@ -85,7 +86,6 @@ const Card = props => {
             resumeTimerToDestroy()
         }
     },[props.doPause]);
-
 
 
     let newObj = {
@@ -124,8 +124,8 @@ const Card = props => {
                             <h1 className="card_offer-title">{props.point}</h1>
                         </div>
                         <div className="card_time">
-                            {/*<h1>{timeToDie/1000}</h1>*/}
-                            <h1>{timeToDie > props.time ? 'Waiting...' : secToMin(timeToDie)}</h1>
+                            <h1>{timeToDie/1000}</h1>
+                            {/*<h1>{timeToDie > props.time ? 'Waiting...' : secToMin(timeToDie)}</h1>*/}
                             <h1>{`${dateNow} - ${dateLater}`}</h1>
                         </div>
                     </div>

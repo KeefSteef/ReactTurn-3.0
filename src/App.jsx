@@ -117,7 +117,7 @@ class App extends React.Component {
 
 function mapStateToPropsApp(state) {
     return {
-        statics: state.statics,
+        statics: state.rootCardOptions.statics,
         viewRejectedList: state.rootCardOptions.viewRejectedList
     }
 }

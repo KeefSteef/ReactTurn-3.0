@@ -9,6 +9,20 @@ import {
 import {clearArr} from "../clearArr";
 import {cleanObjectDuplicatesById} from "../../Services/DuplicatesCleaner/cleanObjectDuplicatesById";
 
+
+const spreadDefaultStateValues = (state) => {
+    return {
+        statics: state.statics,
+        limitStatics : state.limitStatics,
+        isAddToState: state.isAddToState,
+        lastCard: state.lastCard,
+        doPauseCard: state.doPauseCard,
+        viewRejectedList: state.viewRejectedList,
+    }
+}
+
+
+
 const initialState = {
     statics: [],
     limitStatics : [],
@@ -27,7 +41,8 @@ export default function rootCardOptions(state = initialState, action){
             arr = cleanObjectDuplicatesById(arr)
             return {
                 statics: [...arr],
-                limitStatics: clearArr(arr)
+                limitStatics: clearArr(arr),
+                doPauseCard: state.doPauseCard
             }
 
         case REDRAW_STATE_ELEMENT :
@@ -35,7 +50,9 @@ export default function rootCardOptions(state = initialState, action){
             array[action.payload.id - 1] = action.payload
             return {
                 statics: [...array],
-                limitStatics: clearArr(arr)
+                limitStatics: clearArr(arr),
+                doPauseCard: state.doPauseCard
+
             }
 
 
@@ -46,42 +63,41 @@ export default function rootCardOptions(state = initialState, action){
 
             return {
                 statics: [...arr],
-                limitStatics: clearArr(arr)
+                limitStatics: clearArr(arr),
+                doPauseCard: state.doPauseCard
+
             }
 
         case PUSH_OBJ_AFTER_REMOVE:
             return {
-                statics: state.statics,
-                limitStatics: state.limitStatics,
-                isAddToState: action.payload
+                ...spreadDefaultStateValues(state),
+                isAddToState: action.payload,
+
             }
 
         case LAST_FINISHED_CARD:
                 return {
-                    statics: state.statics,
-                    limitStatics: state.limitStatics,
-                    lastCard: action.payload
+                    ...spreadDefaultStateValues(state),
+                    lastCard: action.payload,
                 }
 
 
         case SHOW_REJECTED_LIST:
             return {
-                statics: state.statics,
-                limitStatics: state.limitStatics,
-                lastCard: state.lastCard,
-                doPauseCard: state.doPauseCard,
+                ...spreadDefaultStateValues(state),
                 viewRejectedList: action.payload
             }
 
         case PAUSE_CARD :
             return {
-                statics: state.statics,
-                limitStatics: state.limitStatics,
-                lastCard: state.lastCard,
+                ...spreadDefaultStateValues(state),
                 doPauseCard: action.payload,
                 viewRejectedList: action.payload
             }
-        default : return state
+
+        default : return {
+            ...state
+        }
     }
 }
 

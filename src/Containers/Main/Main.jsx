@@ -57,12 +57,11 @@ class Main extends Component {
 
     toggleViewLast = (e) => {
         this.setState({
-                viewLastCard: !this.state.viewLastCard,
-                isPause: !this.state.isPause,
-            }, () => {
-                this.props.DoPause(this.state.viewLastCard);
-            })
-
+            viewLastCard: !this.state.viewLastCard,
+            isPause: !this.state.isPause,
+        }, () => {
+            this.props.DoPause(this.state.viewLastCard);
+        })
     }
 
 
