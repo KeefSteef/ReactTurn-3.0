@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d636df55-e463-463a-86e2-01781cfc217c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Ui/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Ui/Card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Main/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/rootCardOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/rootCardOptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +50,7 @@
       <workItem from="1633969733906" duration="16000" />
       <workItem from="1633970730866" duration="4619000" />
       <workItem from="1633976867182" duration="23000" />
+      <workItem from="1634057953580" duration="162000" />
     </task>
     <servers />
   </component>
