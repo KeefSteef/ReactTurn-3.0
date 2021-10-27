@@ -124,8 +124,8 @@ const Card = props => {
                             <h1 className="card_offer-title">{props.point}</h1>
                         </div>
                         <div className="card_time">
-                            {/*<h1>{timeToDie/1000}</h1>*/}
-                            <h1>{timeToDie > props.time ? 'Waiting...' : secToMin(timeToDie)}</h1>
+                            <h1>{timeToDie/1000}</h1>
+                            {/*<h1>{timeToDie > props.time ? 'Waiting...' : secToMin(timeToDie)}</h1>*/}
                             <h1>{`${dateNow} - ${dateLater}`}</h1>
                         </div>
                     </div>
@@ -142,7 +142,7 @@ const Card = props => {
                             </div>
                         </div>
                         <div className="card-main-status">
-                            <h1>{timeToDie <= props.time  ? <div>
+                            <h1>{timeToDie < props.time  ? <div>
                                 <h3 style={{
                                     color: 'forestgreen',
                                     fontSize: '18px',
